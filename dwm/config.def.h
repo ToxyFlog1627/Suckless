@@ -1,9 +1,9 @@
 static const unsigned int borderpx  = 1;
-static const unsigned int snap      = 32;
+static const unsigned int snap      = 4;
 static const int showbar            = 1;
 static const int topbar             = 1;
-static char *fonts[]          = { "monospace:size=10" };
-static char dmenufont[]       = "monospace:size=10";
+static char font[]            = "monospace:size=10";
+static const char *fonts[]    = {font, "monospace:size=10"};
 static char col_gray1[]       = "#222222";
 static char col_gray2[]       = "#444444";
 static char col_gray3[]       = "#bbbbbb";
@@ -44,7 +44,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* commands */
-static const char *dmenucmd[]      = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[]      = { "dmenu_run", NULL };
 static const char *termcmd[]       = { "st", NULL };
 static const char *scratchpadcmd[] = { "st", "-g", "120x34", NULL };
 
@@ -52,7 +52,7 @@ static const char *scratchpadcmd[] = { "st", "-g", "120x34", NULL };
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		{ "font",               STRING,  fonts },
+		{ "font",               STRING,  &font },
 		{ "dmenufont",          STRING,  &dmenufont },
 		{ "normbgcolor",        STRING,  &normbgcolor },
 		{ "normbordercolor",    STRING,  &normbordercolor },
