@@ -29,22 +29,23 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
+	/* class           instance      title   tags mask  isfloating  monitor */
+	{ "PLACEHOLDER",     NULL,       NULL,      0,          1,        -1 },
 };
 
-static const int showbar        = 1;
-static const int topbar         = 1;
-static const char *tags[]       = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const float mfact        = 0.5; // factor of master area size [0.05..0.95]
-static const int nmaster        = 1;   // number of clients in master area
-static const int resizehints    = 0;   // 1 means respect size hints in tiled resizals
-static const int lockfullscreen = 1;   // 1 will force focus on the fullscreen window
+static const int showbar          = 1;
+static const int topbar           = 1;
+static const char *tags[]         = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const float mfact          = 0.5; // factor of master area size [0.05..0.95]
+static const int nmaster          = 1;   // number of clients in master area
+static const int resizehints      = 0;   // 1 means respect size hints in tiled resizals
+static const int lockfullscreen   = 1;   // 1 will force focus on the fullscreen window
+static const char *scratchpadname = "scratch";
 
 static const Layout layouts[] = {
 	{ "[]=", tile },
 	{ "[]#", deck }
 };
-
 
 /* commands */
 #define SCRIPT_PATH "/home/tx/Scripts"
@@ -83,7 +84,7 @@ static const Key keys[] = {
 	{ MODKEY,                XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,      XK_c,      killclient,     {0} },
 	{ MODKEY,                XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                XK_g,      setlayout,      {.v = &layouts[1]} }
+	{ MODKEY,                XK_g,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                XK_space,  setlayout,      {0} }, // TODO: what
 	{ MODKEY|ShiftMask,      XK_space,  togglefloating, {0} },
 	{ MODKEY,                XK_0,      view,           {.ui = ~0 } }, // TODO: what

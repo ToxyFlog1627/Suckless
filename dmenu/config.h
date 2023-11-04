@@ -34,9 +34,9 @@ ResourcePref resources[] = {
 
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines = 0;
-static const int topbar   = 1;
-static const int fuzzy    = 1;
-static const char *prompt = NULL;
+static int topbar         = 1;
+static int fuzzy          = 1;
+static char *prompt       = NULL;
 
 /*
  * Characters not considered part of a word while deleting words
