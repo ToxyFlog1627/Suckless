@@ -1,4 +1,5 @@
 static const unsigned int borderpx = 1;
+static const unsigned int gappx    = 8;
 static const unsigned int snap     = 4;
 static char font[]                 = "monospace:size=10";
 static const char *fonts[]         = {font, "monospace:size=10"};
@@ -43,8 +44,7 @@ static const int lockfullscreen   = 1;   // 1 will force focus on the fullscreen
 static const char *scratchpadname = "scratch";
 
 static const Layout layouts[] = {
-	{ "[]=", tile },
-	{ "[]#", deck }
+	{ "[]=", tile }
 };
 
 /* commands */
@@ -83,9 +83,6 @@ static const Key keys[] = {
 	{ MODKEY,                XK_Return, zoom,           {0} }, // TODO: what
 	{ MODKEY,                XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,      XK_c,      killclient,     {0} },
-	{ MODKEY,                XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                XK_g,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                XK_space,  setlayout,      {0} }, // TODO: what
 	{ MODKEY|ShiftMask,      XK_space,  togglefloating, {0} },
 	{ MODKEY,                XK_0,      view,           {.ui = ~0 } }, // TODO: what
 	{ MODKEY|ShiftMask,      XK_0,      tag,            {.ui = ~0 } }, // TODO: what
