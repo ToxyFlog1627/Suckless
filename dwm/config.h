@@ -41,7 +41,6 @@ static const float mfact          = 0.5; // factor of master area size [0.05..0.
 static const int nmaster          = 1;   // number of clients in master area
 static const int resizehints      = 0;   // 1 means respect size hints in tiled resizals
 static const int lockfullscreen   = 1;   // 1 will force focus on the fullscreen window
-static const char *scratchpadname = "scratch";
 
 static const Layout layouts[] = {
 	{ "[]=", tile }
@@ -52,7 +51,6 @@ static const Layout layouts[] = {
 static const char *dmenucmd[]              = { "dmenu_run", NULL };
 static const char *termcmd[]               = { "st", NULL };
 static const char *screenshotcmd[]         = { "flameshot", "gui", NULL };
-static const char *scratchpadcmd[]         = { "st", "-g", "120x34", NULL }; // TODO: scratch size
 static const char *refreshlanguagescript[] = { SCRIPT_PATH"/status_bar.js", "refresh", "language", NULL };
 static const char *shutdownscript[]        = { SCRIPT_PATH"/shutdown_menu.sh", NULL };
 static const char *togglemicscript[]       = { SCRIPT_PATH"/toggle_mic.sh", NULL };
@@ -72,7 +70,6 @@ static const char *decrvolumescript[]      = { SCRIPT_PATH"/decr_volume.sh", NUL
 static const Key keys[] = {
 	{ MODKEY,                XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,      XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                XK_grave,  togglescratch,  {.v = scratchpadcmd } },
      // TODO: scripts
 	{ MODKEY,                XK_j,      focusstack,     {.i = +1 } }, // TODO: what
 	{ MODKEY,                XK_k,      focusstack,     {.i = -1 } }, // TODO: what
