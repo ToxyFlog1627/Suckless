@@ -25,12 +25,6 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 };
 
-static const unsigned int systraypinning = 0;
-static const unsigned int systrayonleft  = 1;
-static const unsigned int systrayspacing = 2;
-static const int systraypinningfailfirst = 1;
-static const int showsystray             = 1;
-
 static const float mfact     = 0.5;  /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */

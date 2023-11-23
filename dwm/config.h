@@ -34,6 +34,12 @@ static const Rule rules[] = {
 	{ "PLACEHOLDER",     NULL,       NULL,      0,          1,        -1 },
 };
 
+static const unsigned int systraypinning = 0;
+static const unsigned int systrayonleft  = 1;
+static const unsigned int systrayspacing = 2;
+static const int systraypinningfailfirst = 1;
+static const int showsystray             = 1;
+
 static const int showbar          = 1;
 static const int topbar           = 1;
 static const char *tags[]         = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
