@@ -77,6 +77,15 @@ char *termname = "xterm-256color";
  */
 unsigned int tabspaces = 8;
 
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor, reverse cursor
+ */
+const unsigned int defaultcs = 256;
+const unsigned int defaultrcs = 257;
+const unsigned int defaultfg = 258;
+const unsigned int defaultbg = 259;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -101,22 +110,11 @@ static const char *colorname[] = {
 
 	[255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"#cccccc", // cursor colour
+	"#555555", // inverse cursor colour
+	"gray90", // foreground colour
+	"black", // background colour
 };
-
-
-/*
- * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
- */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
@@ -158,6 +156,22 @@ static uint forcemousemod = ShiftMask;
  */
 ResourcePref resources[] = {
 		{ "font",                STRING,  &font                  },
+		{ "black",               STRING,  &colorname[0]          },
+		{ "red",                 STRING,  &colorname[1]          },
+		{ "green",               STRING,  &colorname[2]          },
+		{ "yellow",              STRING,  &colorname[3]          },
+		{ "blue",                STRING,  &colorname[4]          },
+		{ "magenta",             STRING,  &colorname[5]          },
+		{ "cyan",                STRING,  &colorname[6]          },
+		{ "white",               STRING,  &colorname[7]          },
+		{ "brightBlack",         STRING,  &colorname[7]          },
+		{ "brightRed",           STRING,  &colorname[8]          },
+		{ "brightGreen",         STRING,  &colorname[10]         },
+		{ "brightYellow",        STRING,  &colorname[11]         },
+		{ "brightBlue",          STRING,  &colorname[12]         },
+		{ "brightMagenta",       STRING,  &colorname[13]         },
+		{ "brightCyan",          STRING,  &colorname[14]         },
+		{ "brightWhite",         STRING,  &colorname[15]         },
 		{ "background",          STRING,  &colorname[defaultbg]  },
 		{ "foreground",          STRING,  &colorname[defaultfg]  },
 		{ "cursorColor",         STRING,  &colorname[defaultcs]  },
